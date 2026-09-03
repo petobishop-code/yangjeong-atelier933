@@ -222,3 +222,29 @@ button,input,select,textarea{font:inherit}
     max-height:none !important;
   }
 }
+
+
+/* v5 - 차콜 카드 텍스트 대비 수정 */
+.medical-item{
+  color:#ffffff !important;
+}
+.medical-item b{
+  color:#ffffff !important;
+}
+.medical-item span{
+  color:#d9dde1 !important;
+}
+
+/* 차콜/다크 배경 안에서 제목과 본문이 묻히지 않도록 강제 대비 */
+.section.dark h1,
+.section.dark h2,
+.section.dark h3,
+.section.dark h4,
+.section.dark strong,
+.section.dark b{
+  color:#ffffff;
+}
+.section.dark p,
+.section.dark li{
+  color:#d7dade;
+}
