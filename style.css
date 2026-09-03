@@ -248,3 +248,42 @@ button,input,select,textarea{font:inherit}
 .section.dark li{
   color:#d7dade;
 }
+
+
+/* v7 - 호실 선택 섹션 제목 한 줄 유지 */
+#guide .section-head{
+  grid-template-columns:1fr !important;
+  text-align:center;
+  gap:14px !important;
+}
+
+#guide .section-head > div,
+#guide .section-head > p{
+  width:100%;
+  max-width:none;
+}
+
+#guide .section-head h2{
+  font-size:42px !important;
+  line-height:1.25 !important;
+  white-space:nowrap;
+}
+
+#guide .section-head p{
+  max-width:860px !important;
+  margin:0 auto !important;
+}
+
+@media(max-width:900px){
+  #guide .section-head h2{
+    font-size:34px !important;
+    white-space:normal;
+  }
+}
+
+@media(max-width:560px){
+  #guide .section-head h2{
+    font-size:30px !important;
+    line-height:1.35 !important;
+  }
+}
