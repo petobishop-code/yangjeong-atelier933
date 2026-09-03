@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://yangjeong-atelier933.vercel.app/sitemap.xml
