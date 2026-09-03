@@ -157,3 +157,68 @@ button,input,select,textarea{font:inherit}
   .nav.mobile-open{display:flex;position:absolute;left:0;right:0;top:76px;background:#242628;padding:18px 24px;flex-direction:column;align-items:flex-start;gap:14px;border-top:1px solid #444}
 }
 @media(max-width:640px){.nav.mobile-open{top:66px}}
+
+
+/* v4 - 이미지 원본 비율 유지 / 강제 크롭 제거 */
+.hero-visual{
+  background:#e9e9e7;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  overflow:hidden;
+}
+.hero-visual img{
+  width:100% !important;
+  height:auto !important;
+  aspect-ratio:auto !important;
+  object-fit:contain !important;
+  object-position:center center !important;
+  max-height:690px;
+}
+
+.editorial .media{
+  background:#efefed;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  overflow:hidden;
+}
+.editorial .media img{
+  width:100% !important;
+  height:auto !important;
+  aspect-ratio:auto !important;
+  object-fit:contain !important;
+  object-position:center center !important;
+  max-height:620px;
+}
+
+.floor-card img{
+  width:100% !important;
+  height:auto !important;
+  aspect-ratio:auto !important;
+  object-fit:contain !important;
+  object-position:center center !important;
+  max-height:none !important;
+}
+
+.article figure{
+  background:#efefed;
+  text-align:center;
+  overflow:hidden;
+}
+.article figure img{
+  width:100% !important;
+  height:auto !important;
+  max-height:none !important;
+  object-fit:contain !important;
+  object-position:center center !important;
+  margin:0 auto;
+}
+
+/* 모바일에서도 사진 전체가 보이도록 유지 */
+@media(max-width:980px){
+  .hero-visual img,
+  .editorial .media img{
+    max-height:none !important;
+  }
+}
