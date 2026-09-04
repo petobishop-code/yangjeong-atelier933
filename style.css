@@ -172,80 +172,353 @@ button,input,select,textarea{font:inherit}
 }
 
 
-/* v12 - 원래 아틀리에933 상세페이지 구조 이식 */
-.wrap{width:min(1180px,calc(100% - 48px));margin:0 auto}
-.clinic-detail-page{background:#f6f3ed;color:#242628}
-.clinic-detail-hero{
-  position:relative;
-  background:#242628;
-  color:#fff;
-  padding:125px 0 90px;
-  overflow:hidden
-}
-.clinic-detail-shade{
-  position:absolute;inset:0;
-  background:linear-gradient(90deg,rgba(36,38,40,.98),rgba(36,38,40,.84) 58%,rgba(36,38,40,.68))
-}
-.clinic-detail-hero-inner{position:relative;z-index:2}
-.clinic-detail-hero .eyebrow{color:#bfc4c8}
-.clinic-detail-hero h1{font-size:54px;line-height:1.18;letter-spacing:-.045em;margin:15px 0 24px;max-width:850px}
-.clinic-detail-hero-inner>p:last-of-type{max-width:830px;font-size:15px;line-height:1.95;color:#d5d9dc}
-.clinic-hero-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:30px}
-.clinic-primary-btn,.clinic-outline-btn{
-  display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 20px;
-  font-size:13px;font-weight:800;text-decoration:none;cursor:pointer
-}
-.clinic-primary-btn{background:#fff;color:#242628;border:1px solid #fff}
-.clinic-outline-btn{background:transparent;color:#fff;border:1px solid #8c9297}
+/* =========================================================
+   v15 상담 UI 최종본 — 기존 모달/플로팅 스타일 충돌 차단
+   ========================================================= */
 
-.clinic-article{padding:88px 0}
-.clinic-article-layout{display:grid;grid-template-columns:230px minmax(0,1fr);gap:72px;align-items:start}
-.clinic-toc{position:sticky;top:105px;border-top:1px solid #b9bdc2}
-.clinic-toc>span{display:block;padding:16px 0 10px;font-size:9px;letter-spacing:.16em;color:#8a9095}
-.clinic-toc a{display:block;padding:12px 0;border-top:1px solid #d6d8da;color:#555b60;text-decoration:none;font-size:11px;line-height:1.55}
-.clinic-content{max-width:850px}
-.clinic-intro-block{padding-bottom:55px;border-bottom:1px solid #d0d3d5}
-.clinic-intro-block .eyebrow{color:#7f858a}
-.clinic-intro-block h2{font-size:38px;line-height:1.3;letter-spacing:-.04em;margin:10px 0 22px}
-.clinic-intro-block p,.clinic-article-section>p{font-size:15px;line-height:2;color:#5f656a}
-.clinic-article-section{padding:54px 0;border-bottom:1px solid #d0d3d5}
-.clinic-section-no{display:block;font-size:10px;letter-spacing:.18em;color:#8b9196;margin-bottom:10px}
-.clinic-article-section h3{font-size:29px;line-height:1.4;letter-spacing:-.035em;margin:0 0 22px}
-.clinic-article-section h4{font-size:18px;margin:0 0 14px}
-.clinic-checklist{margin-top:28px;background:#242628;color:#fff;padding:26px 28px}
-.clinic-checklist h4{color:#fff}
-.clinic-checklist ul{margin:0;padding-left:18px}
-.clinic-checklist li{font-size:13px;line-height:1.85;color:#d8dcdf}
-.clinic-seo-image{margin:34px 0 0;padding:14px;background:#eceae5;border:1px solid #d2d4d5}
-.clinic-seo-image img{display:block;width:100%;height:auto;max-height:590px;object-fit:contain}
-.clinic-seo-image figcaption{padding:10px 2px 0;font-size:11px;line-height:1.7;color:#7a8085}
-.clinic-faq-list details{border-top:1px solid #d0d3d5}
-.clinic-faq-list details:last-child{border-bottom:1px solid #d0d3d5}
-.clinic-faq-list summary{cursor:pointer;padding:18px 0;font-size:14px;font-weight:800;list-style:none}
-.clinic-faq-list summary::-webkit-details-marker{display:none}
-.clinic-faq-list details p{margin:0;padding:0 0 20px;font-size:13px;line-height:1.85;color:#666c71}
-.clinic-related-links{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
-.clinic-related-links a{display:block;border:1px solid #cfd2d4;background:#fff;padding:15px 16px;color:#242628;text-decoration:none;font-size:13px;font-weight:800}
-.clinic-related-links a:hover{background:#242628;color:#fff}
-.clinic-key-grid,.clinic-point-grid,.clinic-stat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:#cfd2d4;border:1px solid #cfd2d4;margin:26px 0}
-.clinic-key-grid>*,.clinic-point-grid>*,.clinic-stat-grid>*{background:#fff;padding:22px}
-.clinic-key-grid strong,.clinic-point-grid strong,.clinic-stat-grid strong{display:block;font-size:18px;margin:6px 0}
-.clinic-key-grid p,.clinic-point-grid p,.clinic-stat-grid p{font-size:12px;line-height:1.75;color:#6c7277}
-.clinic-section-note{font-size:12px!important;color:#858b90!important}
+/* 기존 상담 UI가 남아 있어도 숨김 */
+.floating-contact,
+.modal,
+.modal-panel{
+  display:none !important;
+}
+
+/* 오른쪽 고정 상담 카드 — 첫 번째 사이트와 비슷한 크기감 */
+.side-consult{
+  position:fixed !important;
+  z-index:90 !important;
+  right:24px !important;
+  top:52% !important;
+  transform:translateY(-50%) !important;
+  width:250px !important;
+  display:flex !important;
+  flex-direction:column !important;
+  gap:16px !important;
+}
+
+.side-call,
+.side-action{
+  width:100% !important;
+  min-height:92px !important;
+  border-radius:28px !important;
+  padding:20px 22px !important;
+  box-shadow:0 18px 42px rgba(0,0,0,.16) !important;
+  text-decoration:none !important;
+}
+
+.side-call{
+  display:flex !important;
+  flex-direction:column !important;
+  justify-content:center !important;
+  align-items:flex-start !important;
+  background:#fff !important;
+  color:#242628 !important;
+  border:1px solid #e0e2e3 !important;
+}
+
+.side-call small{
+  font-size:10px !important;
+  letter-spacing:.18em !important;
+  color:#7c8287 !important;
+  margin-bottom:8px !important;
+}
+
+.side-call strong{
+  font-size:27px !important;
+  line-height:1.05 !important;
+  letter-spacing:-.03em !important;
+  margin-bottom:7px !important;
+}
+
+.side-call span{
+  font-size:11px !important;
+  color:#7a8085 !important;
+}
+
+.side-action{
+  border:0 !important;
+  background:#303336 !important;
+  color:#fff !important;
+  display:flex !important;
+  align-items:center !important;
+  gap:16px !important;
+  cursor:pointer !important;
+  text-align:left !important;
+}
+
+.side-action:hover{
+  background:#242628 !important;
+}
+
+.side-icon{
+  width:54px !important;
+  height:54px !important;
+  flex:0 0 54px !important;
+  border:1.5px solid rgba(255,255,255,.6) !important;
+  border-radius:50% !important;
+  display:flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+  font-size:23px !important;
+}
+
+.side-action-copy{
+  display:flex !important;
+  flex-direction:column !important;
+}
+
+.side-action-copy small{
+  font-size:9px !important;
+  letter-spacing:.18em !important;
+  color:#c9cdd0 !important;
+  margin-bottom:7px !important;
+}
+
+.side-action-copy strong{
+  font-size:20px !important;
+  line-height:1.15 !important;
+}
+
+/* 상담 신청 모달 */
+.consult-overlay{
+  position:fixed !important;
+  inset:0 !important;
+  z-index:1000 !important;
+  display:none !important;
+  align-items:center !important;
+  justify-content:center !important;
+  padding:24px !important;
+  background:rgba(15,17,19,.72) !important;
+  backdrop-filter:blur(2px) !important;
+}
+
+.consult-overlay.is-open{
+  display:flex !important;
+}
+
+.consult-dialog{
+  position:relative !important;
+  width:min(720px,calc(100vw - 40px)) !important;
+  max-height:90vh !important;
+  overflow-y:auto !important;
+  background:#f7f4ee !important;
+  color:#242628 !important;
+  padding:44px 46px 40px !important;
+  border:1px solid #d4d6d8 !important;
+  box-shadow:0 28px 90px rgba(0,0,0,.34) !important;
+}
+
+.consult-close{
+  position:absolute !important;
+  top:16px !important;
+  right:18px !important;
+  width:42px !important;
+  height:42px !important;
+  padding:0 !important;
+  border:1px solid #c9cdd0 !important;
+  background:#fff !important;
+  color:#242628 !important;
+  font-size:25px !important;
+  line-height:1 !important;
+  cursor:pointer !important;
+}
+
+.consult-heading{
+  padding-right:52px !important;
+  margin-bottom:30px !important;
+}
+
+.consult-heading>span{
+  display:block !important;
+  margin-bottom:10px !important;
+  font-size:10px !important;
+  letter-spacing:.18em !important;
+  color:#858b90 !important;
+  font-weight:800 !important;
+}
+
+.consult-heading h2{
+  margin:0 0 12px !important;
+  font-size:32px !important;
+  line-height:1.25 !important;
+  letter-spacing:-.04em !important;
+  color:#242628 !important;
+}
+
+.consult-heading p{
+  margin:0 !important;
+  font-size:14px !important;
+  line-height:1.8 !important;
+  color:#656b70 !important;
+}
+
+.consult-form{
+  display:block !important;
+  width:100% !important;
+}
+
+.consult-fields{
+  display:grid !important;
+  grid-template-columns:repeat(2,minmax(0,1fr)) !important;
+  gap:18px 16px !important;
+}
+
+.consult-fields label{
+  display:flex !important;
+  flex-direction:column !important;
+  gap:8px !important;
+  min-width:0 !important;
+}
+
+.consult-fields label>span{
+  font-size:12px !important;
+  font-weight:800 !important;
+  color:#34383b !important;
+}
+
+.consult-fields input,
+.consult-fields select,
+.consult-fields textarea{
+  width:100% !important;
+  min-width:0 !important;
+  min-height:48px !important;
+  padding:12px 13px !important;
+  border:1px solid #c8ccd0 !important;
+  border-radius:0 !important;
+  background:#fff !important;
+  color:#242628 !important;
+  font-size:14px !important;
+  outline:none !important;
+}
+
+.consult-fields textarea{
+  min-height:128px !important;
+  resize:vertical !important;
+  line-height:1.6 !important;
+}
+
+.consult-fields input:focus,
+.consult-fields select:focus,
+.consult-fields textarea:focus{
+  border-color:#747a80 !important;
+}
+
+.consult-full{
+  grid-column:1 / -1 !important;
+}
+
+.consult-agree{
+  display:flex !important;
+  align-items:flex-start !important;
+  gap:9px !important;
+  margin:20px 0 18px !important;
+  font-size:12px !important;
+  line-height:1.6 !important;
+  color:#5f656a !important;
+}
+
+.consult-agree input{
+  margin-top:3px !important;
+  flex:0 0 auto !important;
+}
+
+.consult-submit{
+  width:100% !important;
+  height:54px !important;
+  border:0 !important;
+  background:#242628 !important;
+  color:#fff !important;
+  font-size:14px !important;
+  font-weight:800 !important;
+  cursor:pointer !important;
+}
+
+.consult-submit:hover{
+  background:#35383b !important;
+}
+
+.consult-status{
+  min-height:20px !important;
+  margin:12px 0 0 !important;
+  font-size:12px !important;
+  line-height:1.6 !important;
+  color:#5d6368 !important;
+}
+
+body.consult-lock{
+  overflow:hidden !important;
+}
 
 @media(max-width:900px){
-  .clinic-article-layout{grid-template-columns:1fr}
-  .clinic-toc{display:none}
-  .clinic-detail-hero{padding:105px 0 75px}
-  .clinic-detail-hero h1{font-size:42px}
-  .clinic-intro-block h2{font-size:32px}
-  .clinic-key-grid,.clinic-point-grid,.clinic-stat-grid{grid-template-columns:1fr}
+  .side-consult{
+    right:16px !important;
+    width:220px !important;
+  }
+  .side-call,
+  .side-action{
+    min-height:84px !important;
+    padding:17px 18px !important;
+  }
+  .side-call strong{
+    font-size:22px !important;
+  }
 }
-@media(max-width:560px){
-  .wrap{width:min(100% - 28px,1180px)}
-  .clinic-detail-hero h1{font-size:34px}
-  .clinic-article{padding:62px 0}
-  .clinic-article-section{padding:42px 0}
-  .clinic-article-section h3{font-size:25px}
-  .clinic-related-links{grid-template-columns:1fr}
+
+@media(max-width:700px){
+  .side-consult{
+    top:auto !important;
+    transform:none !important;
+    left:12px !important;
+    right:12px !important;
+    bottom:12px !important;
+    width:auto !important;
+    flex-direction:row !important;
+    gap:0 !important;
+  }
+  .side-call,
+  .side-action{
+    flex:1 1 50% !important;
+    min-height:64px !important;
+    border-radius:0 !important;
+    padding:10px 14px !important;
+    box-shadow:0 10px 28px rgba(0,0,0,.20) !important;
+  }
+  .side-call strong{
+    font-size:15px !important;
+    margin-bottom:0 !important;
+  }
+  .side-call small,
+  .side-call span,
+  .side-action-copy small,
+  .side-icon{
+    display:none !important;
+  }
+  .side-action{
+    justify-content:center !important;
+    text-align:center !important;
+  }
+  .side-action-copy strong{
+    font-size:15px !important;
+  }
+
+  .consult-overlay{
+    padding:12px !important;
+  }
+  .consult-dialog{
+    width:100% !important;
+    max-height:93vh !important;
+    padding:36px 20px 24px !important;
+  }
+  .consult-heading{
+    padding-right:38px !important;
+  }
+  .consult-heading h2{
+    font-size:27px !important;
+  }
+  .consult-fields{
+    grid-template-columns:1fr !important;
+  }
+  .consult-full{
+    grid-column:auto !important;
+  }
 }
