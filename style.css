@@ -522,3 +522,39 @@ body.consult-lock{
     grid-column:auto !important;
   }
 }
+
+/* v16 상세페이지 정돈 */
+.detail-hero{background:#242628;color:#fff;padding:92px 0 68px}
+.detail-hero-inner{max-width:920px}
+.detail-hero .eyebrow{color:#bfc4c8}
+.detail-hero h1{margin:14px 0 18px;max-width:860px;font-size:46px;line-height:1.22;letter-spacing:-.045em;color:#fff}
+.detail-hero p{max-width:790px;margin:0;font-size:15px;line-height:1.9;color:#d2d6d9}
+.detail-article{padding:84px 0 96px;background:#fbfaf7}
+.detail-article-inner{width:min(900px,calc(100% - 48px));margin:0 auto}
+.detail-article-inner h2,.detail-article-inner h3{color:#242628;letter-spacing:-.03em}
+.detail-article-inner h2{margin:58px 0 16px;font-size:28px;line-height:1.45}
+.detail-article-inner h3{margin:38px 0 14px;font-size:22px}
+.detail-article-inner p{margin:0 0 22px;font-size:15px;line-height:2;color:#5f656a}
+.detail-figure{margin:34px 0 56px;padding:16px;background:#f0eee9;border:1px solid #d4d6d8}
+.detail-figure img{width:100%;height:auto;max-height:620px;object-fit:contain;margin:auto}
+.detail-figure figcaption{padding-top:10px;font-size:11px;line-height:1.7;color:#7b8186}
+.detail-info-box{margin:24px 0 42px;padding:24px 26px;background:#f1efea;border-left:3px solid #8e949b}
+.detail-info-box strong,.detail-info-box h4{display:block;margin:0 0 8px;font-size:15px}
+.detail-info-box p,.detail-info-box li{font-size:13px;line-height:1.8;color:#62686d}
+.detail-related{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:18px 0 30px}
+.detail-related a{display:flex;align-items:center;min-height:60px;padding:14px 16px;border:1px solid #cfd2d4;background:#fff;color:#242628;text-decoration:none;font-size:13px;font-weight:800}
+.detail-note{margin-top:34px!important;padding-top:18px;border-top:1px solid #d5d7d9;font-size:11px!important;color:#81878c!important}
+.detail-bottom-cta{padding:66px 0;background:#303336;color:#fff}
+.detail-bottom-cta-inner{display:grid;grid-template-columns:1fr auto;gap:50px;align-items:center}
+.detail-bottom-cta .eyebrow{color:#c5c9cd}
+.detail-bottom-cta h2{margin:12px 0;font-size:34px;line-height:1.3}
+.detail-bottom-cta p{margin:0;color:#d1d5d8}
+.detail-bottom-actions{display:flex;gap:10px}
+.detail-bottom-actions a,.detail-bottom-actions button{height:52px;padding:0 20px;display:inline-flex;align-items:center;border:1px solid #858b90;font-weight:800;text-decoration:none;cursor:pointer}
+.detail-bottom-actions a{color:#fff}.detail-bottom-actions button{background:#fff;color:#242628}
+@media(max-width:760px){
+.detail-hero{padding:72px 0 52px}.detail-hero h1{font-size:34px}
+.detail-article{padding:58px 0 72px}.detail-article-inner{width:min(100% - 28px,900px)}
+.detail-related{grid-template-columns:1fr}.detail-bottom-cta-inner{grid-template-columns:1fr;text-align:center}
+.detail-bottom-actions{flex-direction:column}
+}
