@@ -558,3 +558,73 @@ body.consult-lock{
 .detail-related{grid-template-columns:1fr}.detail-bottom-cta-inner{grid-template-columns:1fr;text-align:center}
 .detail-bottom-actions{flex-direction:column}
 }
+
+
+/* =========================================================
+   v17 원래 내부페이지 구조 복원
+   ========================================================= */
+.orig-detail-hero{background:#242628;color:#fff;padding:92px 0 64px}
+.orig-detail-hero .container{max-width:1180px}
+.orig-eyebrow{display:block;font-size:10px;letter-spacing:.18em;color:#c2c7ca;font-weight:800}
+.orig-detail-hero h1{max-width:900px;margin:14px 0 18px;font-size:50px;line-height:1.18;letter-spacing:-.045em}
+.orig-detail-hero>div>p{max-width:830px;font-size:15px;line-height:1.9;color:#d4d8da}
+.orig-hero-actions{display:flex;gap:10px;margin:28px 0 36px}
+.orig-hero-actions a,.orig-hero-actions button{height:48px;padding:0 20px;display:inline-flex;align-items:center;border:1px solid #90969b;text-decoration:none;font-size:12px;font-weight:800;cursor:pointer}
+.orig-hero-actions a{background:#fff;color:#242628}.orig-hero-actions button{background:transparent;color:#fff}
+.orig-stat-grid{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid #555a5e}
+.orig-stat-grid article{min-height:145px;padding:22px;border-right:1px solid #555a5e}.orig-stat-grid article:last-child{border-right:0}
+.orig-stat-grid span{display:block;font-size:10px;color:#b8bdc1;margin-bottom:18px}
+.orig-stat-grid strong{display:block;font-size:17px;margin-bottom:8px}
+.orig-stat-grid p{margin:0;font-size:11px;line-height:1.7;color:#cfd3d6}
+
+.orig-detail-body{padding:86px 0 105px;background:#fbfaf7}
+.orig-detail-layout{display:grid;grid-template-columns:230px minmax(0,1fr);gap:72px;align-items:start}
+.orig-toc{position:sticky;top:100px;border-top:1px solid #b9bdc2}
+.orig-toc>span{display:block;padding:14px 0 9px;font-size:9px;letter-spacing:.16em;color:#81878c}
+.orig-toc a{display:block;padding:12px 0;border-top:1px solid #d4d6d8;color:#50565b;text-decoration:none;font-size:11px;line-height:1.55}
+.orig-content{max-width:850px}
+.orig-intro{padding-bottom:54px;border-bottom:1px solid #d0d3d5}
+.orig-intro>span{font-size:10px;letter-spacing:.16em;color:#81878c;font-weight:800}
+.orig-intro h2{font-size:38px;line-height:1.3;letter-spacing:-.04em;margin:12px 0 18px}
+.orig-intro p,.orig-point>p{font-size:15px;line-height:2;color:#5e6469}
+.orig-point{padding:52px 0;border-bottom:1px solid #d0d3d5}
+.orig-section-no{display:block;font-size:10px;letter-spacing:.16em;color:#8b9196;margin-bottom:10px}
+.orig-point h3{font-size:29px;line-height:1.4;letter-spacing:-.035em;margin:0 0 20px}
+.orig-detail-image{margin:30px 0 8px;padding:14px;background:#f0eee9;border:1px solid #d3d5d7}
+.orig-detail-image img{width:100%;height:auto;max-height:590px;object-fit:contain}
+.orig-detail-image figcaption{padding-top:9px;font-size:11px;line-height:1.7;color:#7b8186}
+.orig-checklist{margin-top:28px;padding:26px 28px;background:#242628;color:#fff}
+.orig-checklist h4{margin:0 0 12px;font-size:17px}
+.orig-checklist ul{margin:0;padding-left:18px}.orig-checklist li{font-size:13px;line-height:1.85;color:#d7dbde}
+.orig-faq-intro{margin-bottom:22px!important}
+.orig-faq-list details{border-top:1px solid #d0d3d5}.orig-faq-list details:last-child{border-bottom:1px solid #d0d3d5}
+.orig-faq-list summary{cursor:pointer;list-style:none;padding:18px 0;font-size:14px;font-weight:800}.orig-faq-list summary::-webkit-details-marker{display:none}
+.orig-faq-list details p{margin:0;padding:0 0 20px;font-size:13px;line-height:1.9;color:#656b70}
+.orig-medical-space{margin-top:58px;padding:34px;background:#f0eee9;border:1px solid #d3d5d7}
+.orig-medical-space>span{font-size:10px;letter-spacing:.16em;color:#81878c}
+.orig-medical-space h3{font-size:26px;margin:10px 0 18px}
+.orig-medical-space ul{padding-left:18px}.orig-medical-space li{font-size:13px;line-height:1.8;color:#5e6469}
+.orig-medical-space a,.orig-medical-space button{height:46px;padding:0 18px;margin:14px 6px 0 0;display:inline-flex;align-items:center;border:1px solid #242628;text-decoration:none;font-size:12px;font-weight:800}
+.orig-medical-space a{background:#242628;color:#fff}.orig-medical-space button{background:#fff;color:#242628;cursor:pointer}
+.orig-medical-space>p{margin:18px 0 0;font-size:11px!important;line-height:1.7!important;color:#80868b!important}
+
+/* 메인 인사이트 카드형 */
+.insight-card-grid{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid #555a5e;border-left:1px solid #555a5e}
+.insight-card-new{min-height:270px;padding:28px 24px;border-right:1px solid #555a5e;border-bottom:1px solid #555a5e;color:#fff;text-decoration:none;display:flex;flex-direction:column;background:#292c2f}
+.insight-card-new small{font-size:9px;letter-spacing:.16em;color:#aeb3b7}
+.insight-card-new h3{font-size:20px;line-height:1.45;margin:18px 0 12px}
+.insight-card-new p{font-size:12px;line-height:1.8;color:#c4c9cc;margin:0}
+.insight-card-new b{margin-top:auto;padding-top:26px;font-size:11px}
+.insight-card-new:hover{background:#f5f2ec;color:#242628}.insight-card-new:hover p{color:#62686d}
+
+@media(max-width:980px){
+  .orig-detail-layout{grid-template-columns:1fr}.orig-toc{display:none}
+  .orig-stat-grid{grid-template-columns:repeat(2,1fr)}.orig-stat-grid article:nth-child(2){border-right:0}
+  .insight-card-grid{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:600px){
+  .orig-detail-hero{padding:70px 0 50px}.orig-detail-hero h1{font-size:35px}
+  .orig-stat-grid{grid-template-columns:1fr}.orig-stat-grid article{border-right:0;border-bottom:1px solid #555a5e}
+  .orig-detail-body{padding:58px 0 76px}.orig-intro h2{font-size:31px}.orig-point h3{font-size:24px}
+  .insight-card-grid{grid-template-columns:1fr}.insight-card-new{min-height:230px}
+}
