@@ -1,28 +1,17 @@
-양정 아틀리에933 v1
-저장소: yangjeong-atelier933
-예상 Vercel 주소: https://yangjeong-atelier933.vercel.app
+﻿양정 아틀리에933 INSIGHTS 404 일괄수정
 
-업로드:
-- ZIP을 풀고 안의 파일/폴더를 저장소 루트에 그대로 업로드
-- Vercel 프로젝트 환경변수:
-  TELEGRAM_BOT_TOKEN
-  TELEGRAM_CHAT_ID
-- 환경변수 추가/변경 후 Redeploy
+1. 이 ZIP을 압축 해제합니다.
+2. fix-insights-link.ps1 파일을 양정 아틀리에933 로컬 저장소 최상위 폴더
+   (index.html, style.css 등이 있는 폴더)에 넣습니다.
+3. fix-insights-link.ps1 우클릭 → PowerShell에서 실행
+4. 완료 후 fix-insights-link.ps1 파일은 삭제합니다.
+5. GitHub Desktop에서 변경된 HTML 파일들을 확인합니다.
+6. Summary 예: Fix insights links
+7. Commit to main → Push origin
 
-SEO:
-- sitemap.xml, robots.txt 포함
-- 메인 + 상세 8페이지
-- 메인 키워드: 양정 아틀리에933
-- 요청 키워드 12개 자연스럽게 분산
-- '양정역 아틀리에33'은 요청에 따라 제외
+수정하는 내용은 딱 하나입니다.
+href="insights.html"
+→
+href="index.html#insights"
 
-
-[V11 통합본]
-- 기존 양정 사이트의 아이보리+차콜 디자인 유지
-- 이전 atelier-933-main 사이트의 PROJECT / COMMERCIAL VALUE / AVENUE 933 / SPACE COLLECTION / CONTACT 구조 반영
-- 이전 사이트 이미지 일부를 assets/reference/ 폴더에 재사용
-- 주차 대수/무료시간 같은 변동 가능 수치 미사용
-- 배후수요는 약 6만5천 세대로 통일
-- 상담 폼 POST: /api/contact
-- Telegram 환경변수: TELEGRAM_BOT_TOKEN, TELEGRAM_CHAT_ID
-- Vercel 환경변수 저장 후 Production Redeploy 필요
+페이지 본문, 제목, 디자인, CSS, 상담팝업 코드는 건드리지 않습니다.
