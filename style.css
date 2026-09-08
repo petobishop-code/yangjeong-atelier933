@@ -393,3 +393,192 @@ button,input,select,textarea{font:inherit}
     font-size:16px;
   }
 }
+
+
+/* === 상담 신청 모달 복구 === */
+.consult-lock{overflow:hidden;}
+
+.consult-overlay{
+  position:fixed;
+  inset:0;
+  z-index:9999;
+  display:none;
+  align-items:center;
+  justify-content:center;
+  padding:24px;
+  background:rgba(10,14,18,.66);
+  backdrop-filter:blur(4px);
+  -webkit-backdrop-filter:blur(4px);
+}
+
+.consult-overlay.is-open{
+  display:flex;
+}
+
+.consult-dialog{
+  position:relative;
+  width:min(720px,100%);
+  max-height:90vh;
+  overflow:auto;
+  box-sizing:border-box;
+  padding:38px 38px 32px;
+  background:#f4f1ea;
+  color:#202326;
+  border:1px solid rgba(255,255,255,.2);
+  box-shadow:0 24px 80px rgba(0,0,0,.28);
+}
+
+.consult-close{
+  position:absolute;
+  top:14px;
+  right:16px;
+  width:38px;
+  height:38px;
+  border:0;
+  background:transparent;
+  color:#202326;
+  font-size:28px;
+  line-height:1;
+  cursor:pointer;
+}
+
+.consult-heading{
+  padding-right:48px;
+  margin-bottom:28px;
+}
+
+.consult-heading>span{
+  display:block;
+  margin-bottom:9px;
+  color:#8c7652;
+  font-size:11px;
+  font-weight:700;
+  letter-spacing:.14em;
+}
+
+.consult-heading h2{
+  margin:0 0 10px;
+  font-size:30px;
+  line-height:1.25;
+  letter-spacing:-.035em;
+}
+
+.consult-heading p{
+  margin:0;
+  color:#666b70;
+  font-size:14px;
+  line-height:1.7;
+}
+
+.consult-form{
+  display:block;
+}
+
+.consult-fields{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:18px;
+}
+
+.consult-fields label,
+.consult-agree{
+  display:flex;
+  flex-direction:column;
+  gap:8px;
+}
+
+.consult-fields label>span{
+  font-size:12px;
+  font-weight:700;
+  color:#303438;
+}
+
+.consult-fields input,
+.consult-fields select,
+.consult-fields textarea{
+  width:100%;
+  box-sizing:border-box;
+  border:1px solid #cbc7bd;
+  background:#fff;
+  color:#202326;
+  border-radius:0;
+  padding:13px 14px;
+  font:inherit;
+  outline:none;
+}
+
+.consult-fields input,
+.consult-fields select{
+  height:48px;
+}
+
+.consult-fields textarea{
+  min-height:110px;
+  resize:vertical;
+}
+
+.consult-fields input:focus,
+.consult-fields select:focus,
+.consult-fields textarea:focus{
+  border-color:#8c7652;
+}
+
+.consult-full{
+  grid-column:1/-1;
+}
+
+.consult-agree{
+  flex-direction:row;
+  align-items:flex-start;
+  gap:9px;
+  margin:18px 0;
+  font-size:12px;
+  line-height:1.6;
+  color:#555b60;
+}
+
+.consult-agree input{
+  margin-top:3px;
+  flex:0 0 auto;
+}
+
+.consult-submit{
+  width:100%;
+  min-height:52px;
+  border:1px solid #262a2d;
+  background:#262a2d;
+  color:#fff;
+  font-weight:700;
+  cursor:pointer;
+}
+
+.consult-submit:hover{
+  background:#171a1c;
+}
+
+.consult-status{
+  min-height:20px;
+  margin:12px 0 0;
+  font-size:12px;
+  line-height:1.6;
+  color:#55606a;
+}
+
+@media(max-width:640px){
+  .consult-overlay{
+    padding:14px;
+  }
+  .consult-dialog{
+    padding:30px 20px 24px;
+  }
+  .consult-heading h2{
+    font-size:25px;
+  }
+  .consult-fields{
+    grid-template-columns:1fr;
+    gap:14px;
+  }
+  .consult-full{
+    grid-column:auto;
+  }
+}
