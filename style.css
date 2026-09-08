@@ -172,7 +172,7 @@ button,input,select,textarea{font:inherit}
 }
 
 
-/* v12 - 원래 아틀리에933 상세페이지 구조 이식 */
+/* v12 - 원래 애비뉴933 상세페이지 구조 이식 */
 .wrap{width:min(1180px,calc(100% - 48px));margin:0 auto}
 .clinic-detail-page{background:#f6f3ed;color:#242628}
 .clinic-detail-hero{

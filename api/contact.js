@@ -20,7 +20,7 @@ export default async function handler(req,res){
   if(!token || !chatId) return res.status(503).json({ok:false,error:'텔레그램 환경변수가 적용되지 않았습니다.'});
 
   const text=[
-    '🏢 양정 아틀리에933 상담신청',
+    '🏢 양정 애비뉴933 상담신청',
     `이름: ${name}`,
     `연락처: ${phone}`,
     `관심분야: ${interest || '-'}`,

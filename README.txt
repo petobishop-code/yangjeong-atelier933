@@ -1,7 +1,7 @@
-﻿양정 아틀리에933 INSIGHTS 404 일괄수정
+﻿양정 애비뉴933 INSIGHTS 404 일괄수정
 
 1. 이 ZIP을 압축 해제합니다.
-2. fix-insights-link.ps1 파일을 양정 아틀리에933 로컬 저장소 최상위 폴더
+2. fix-insights-link.ps1 파일을 양정 애비뉴933 로컬 저장소 최상위 폴더
    (index.html, style.css 등이 있는 폴더)에 넣습니다.
 3. fix-insights-link.ps1 우클릭 → PowerShell에서 실행
 4. 완료 후 fix-insights-link.ps1 파일은 삭제합니다.
